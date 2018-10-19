@@ -1,0 +1,238 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft JhengHei";
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+.container {
+    display: flex;
+    max-width: 100%;
+    height: 400px;
+}
+
+.Leftblock {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.dateCol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12.5%;
+    width: 100%;
+    border: .5px solid #E1E2E4;
+    box-sizing: border-box;
+    background: #F1F1F1;
+    flex-direction: column;
+    color: #666;
+    font-weight: bold;
+
+    &:nth-child(1) {
+        background-color: #EAEDF2;
+        color: #666;
+        font-weight: normal;
+    }
+
+
+    span {
+        min-width: 80%;
+
+        &:nth-child(1) {
+            text-align: right;
+        }
+    }
+}
+
+.dateRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EAEDF2;
+    border: .5px solid #E1E2E4;
+    box-sizing: border-box;
+    overflow: hidden;
+    word-break: break-all;
+    height: 100%;
+    width: 14.5%;
+    color: #666;
+    font-weight: bold;
+}
+
+.nextYear {
+    &::before {
+        content: "2018";
+        display: block;
+        font-size: 12px;
+        color: #24a07c;
+        text-align: right;
+        line-height: 1;
+    }
+}
+
+.Rightblock {
+    width: 75%;
+    height: 100%;
+    overflow: hidden;
+
+    .slider-div {
+        position: relative;
+        height: 100%;
+        min-width: 100%;
+        // overflow: scroll;
+
+        &::-webkit-scrollbar {
+            display: none; // Safari and Chrome
+        }
+    }
+
+    .weekprice {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 12.5%;
+
+        .date {
+            height: 100%;
+        }
+
+        .dailyprice {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: .5px solid rgb(236, 236, 236);
+            box-sizing: border-box;
+            overflow: hidden;
+            word-break: break-all;
+            height: 100%;
+            width: 14.5%;
+
+            &:hover {
+                border: .5px solid #fe8b88;
+                cursor: pointer;
+            }
+
+            &:active,
+            &.active {
+                border: .5px solid #fe8b88;
+                background-color: #FFF9E3;
+            }
+        }
+    }
+}
+
+
+.left-btn {
+    padding: 4px 5px;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    z-index: 2;
+    background-color: hsla(0, 0%, 67%, .5);
+    opacity: .8;
+    color: #fff;
+    cursor: pointer;
+    top: 26%;
+    left: 25%;
+    display: block;
+}
+
+.hide {
+    display: none !important;
+}
+
+.right-btn {
+    padding: 4px 5px;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    z-index: 2;
+    background-color: hsla(0, 0%, 67%, .5);
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    top: 26%;
+    right: 0;
+}
+
+.gray-background {
+    background: rgb(236, 236, 236);
+
+    .dailyprice {
+        background-color: rgb(236, 236, 236);
+    }
+}
+
+.triangle {
+    position: relative;
+    &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-style: solid;
+        border-width: 20px 20px 0 0;
+        border-color: #FF8E26 transparent transparent transparent;
+    }
+
+    &::after {
+        content: "\6700\4FBF\5B9C";
+        position: absolute;
+        width: 36px;
+        top: 0;
+        left: 20px;
+        color: #FF8E26;
+        font-size: 12px;
+        font-family: "Microsoft JhengHei";
+    }
+}
+
+.col-1 {
+    min-width: 100%;
+}
+
+.col-2 {
+    min-width: 50%;
+}
+
+.col-3 {
+    min-width: 33.3333%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 800px;
+    }
+
+    .Leftblock {
+        width: 12%;
+    }
+
+    .Rightblock {
+        width: 88%;
+
+        .slider-div {
+            transform: translateX(0) !important;
+        }
+    }
+
+    .right-btn {
+        display: none;
+    }
+
+    .left-btn {
+        display: none;
+    }
+
+    .col-1,
+    .col-2,
+    .col-3 {
+        min-width: 0;
+    }
+}
