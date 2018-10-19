@@ -12,6 +12,6 @@
 
 
 ### mobile版
->> + 補充說明：顯示左右按鈕，供使用者滑動週曆
+> + 補充說明：顯示左右按鈕，供使用者滑動週曆
 ![weekTable-m01](https://github.com/beiyi1996/First-React-Module/blob/master/pic/fz-table-mobile.png)
 ![weekTable-m02](https://github.com/beiyi1996/First-React-Module/blob/master/pic/fz-table-mobile02.png)
